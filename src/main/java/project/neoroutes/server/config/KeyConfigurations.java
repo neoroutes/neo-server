@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import project.neoroutes.helper.KeyStoreWrapper;
 import project.neoroutes.key.*;
 
 import java.io.IOException;
@@ -35,13 +36,19 @@ public class KeyConfigurations {
         return new NeoRoutesCNGenerator(userIdGenerator.generate());
     }
 
-    @Bean("keyStoreGenerator")
+    @Bean("keyStore")
     @DependsOn(value = {"cnGenerator", "userIdGenerator"})
-    public KeyStore keyStoreGenerator(CNGenerator cnGenerator, UserIdGenerator userIdGenerator) throws IOException {
+    public KeyStore keyStore(CNGenerator cnGenerator, UserIdGenerator userIdGenerator) throws IOException {
         String userUUID = userIdGenerator.generate();
         log.info("Initializing application with user id: " + userUUID);
 
         return new KeyStoreGenerator(cnGenerator, keyStoreAddress, password, userUUID).generate();
+    }
+
+    @Bean("keyStoreWrapper")
+    @DependsOn(value = "keyStore")
+    public KeyStoreWrapper keyStoreWrapper(KeyStore keyStore){
+        return new KeyStoreWrapper(keyStore, keyStoreAddress, password);
     }
 
 }
