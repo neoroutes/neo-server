@@ -45,7 +45,7 @@
 		<dependency>
 			<groupId>project.neoroutes</groupId>
 			<artifactId>java-core</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
+			<version>1.0.3-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

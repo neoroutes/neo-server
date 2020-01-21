@@ -7,7 +7,7 @@ public class SuccessResult extends Result {
         super(Status.SUCCESS);
     }
 
-    public static SuccessResult get(){
+    public static SuccessResult getSuccessResult(){
         return successResultDto;
     }
 }

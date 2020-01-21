@@ -25,23 +25,21 @@ public class KeyConfigurations {
         this.password = password;
     }
 
-    @Bean
-    public UserIdGenerator userIdGenerator(){
-        return new UUIDFileUserIdGenerator(uuidAddress);
+    @Bean("userUUID")
+    public String userUUID(){
+        return new UUIDFileUserIdGenerator(uuidAddress).generate();
     }
 
     @Bean
-    @DependsOn(value = "userIdGenerator")
-    public CNGenerator cnGenerator(UserIdGenerator userIdGenerator){
-        return new NeoRoutesCNGenerator(userIdGenerator.generate());
+    @DependsOn(value = "userUUID")
+    public CNGenerator cnGenerator(String userUUID){
+        return new NeoRoutesCNGenerator(userUUID);
     }
 
     @Bean("keyStore")
-    @DependsOn(value = {"cnGenerator", "userIdGenerator"})
-    public KeyStore keyStore(CNGenerator cnGenerator, UserIdGenerator userIdGenerator) throws IOException {
-        String userUUID = userIdGenerator.generate();
-        log.info("Initializing application with user id: " + userUUID);
-
+    @DependsOn(value = {"cnGenerator", "userUUID"})
+    public KeyStore keyStore(CNGenerator cnGenerator, String userUUID) throws IOException {
+        log.info("Initializing application keystore with user id: " + userUUID);
         return new KeyStoreGenerator(cnGenerator, keyStoreAddress, password, userUUID).generate();
     }
 

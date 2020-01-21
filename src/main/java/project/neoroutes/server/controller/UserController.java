@@ -2,8 +2,9 @@ package project.neoroutes.server.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import project.neoroutes.server.domain.model.i.AddCertificate;
+import project.neoroutes.server.domain.model.UserCertificate;
 import project.neoroutes.server.domain.model.o.SuccessResult;
+import project.neoroutes.server.domain.model.o.UserCertificateList;
 import project.neoroutes.server.service.CertificateService;
 
 import javax.validation.Valid;
@@ -20,8 +21,28 @@ public class UserController {
 
     @PostMapping("/certificates")
     public @ResponseBody
-    SuccessResult addCertificate(@Valid @RequestBody AddCertificate addCertificate){
-        certificateService.addCertificate(addCertificate);
-        return SuccessResult.get();
+    SuccessResult addCertificate(@Valid @RequestBody UserCertificate userCertificate){
+        certificateService.addCertificate(userCertificate);
+        return SuccessResult.getSuccessResult();
+    }
+
+    @GetMapping("/certificates")
+    public @ResponseBody
+    UserCertificateList getCertificateList(){
+        return certificateService.getCertificates();
+    }
+
+    @DeleteMapping("/certificates/{userId}")
+    public @ResponseBody
+    SuccessResult deleteCertificate(@PathVariable String userId){
+        certificateService.deleteCertificate(userId);
+        return SuccessResult.getSuccessResult();
+    }
+
+    @PutMapping("/certificates")
+    public @ResponseBody
+    SuccessResult updateCertificate(@Valid @RequestBody UserCertificate userCertificate){
+        certificateService.updateCertificate(userCertificate);
+        return SuccessResult.getSuccessResult();
     }
 }
