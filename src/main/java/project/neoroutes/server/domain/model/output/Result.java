@@ -1,4 +1,4 @@
-package project.neoroutes.server.domain.model.o;
+package project.neoroutes.server.domain.model.output;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

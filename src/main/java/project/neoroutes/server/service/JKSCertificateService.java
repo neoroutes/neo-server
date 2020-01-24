@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import project.neoroutes.helper.KeyStoreWrapper;
 import project.neoroutes.server.domain.model.UserCertificate;
-import project.neoroutes.server.domain.model.o.UserCertificateList;
+import project.neoroutes.server.domain.model.output.UserCertificateList;
 import project.neoroutes.server.exception.NeoRoutesRuntimeException;
 import sun.misc.BASE64Encoder;
 

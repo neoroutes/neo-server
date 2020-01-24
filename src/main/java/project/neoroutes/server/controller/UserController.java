@@ -3,8 +3,8 @@ package project.neoroutes.server.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import project.neoroutes.server.domain.model.UserCertificate;
-import project.neoroutes.server.domain.model.o.SuccessResult;
-import project.neoroutes.server.domain.model.o.UserCertificateList;
+import project.neoroutes.server.domain.model.output.SuccessResult;
+import project.neoroutes.server.domain.model.output.UserCertificateList;
 import project.neoroutes.server.service.CertificateService;
 
 import javax.validation.Valid;

@@ -1,4 +1,4 @@
-package project.neoroutes.server.domain.model.o;
+package project.neoroutes.server.domain.model.output;
 
 public class SuccessResult extends Result {
     private static final SuccessResult successResultDto = new SuccessResult();
