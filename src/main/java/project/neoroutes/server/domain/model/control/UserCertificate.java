@@ -1,4 +1,4 @@
-package project.neoroutes.server.domain.model;
+package project.neoroutes.server.domain.model.control;
 
 import lombok.*;
 
