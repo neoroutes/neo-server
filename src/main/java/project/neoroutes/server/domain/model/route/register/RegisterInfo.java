@@ -5,7 +5,6 @@ import project.neoroutes.server.domain.model.route.UserInfo;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @Getter
 @Setter
 public class RegisterInfo extends UserInfo {

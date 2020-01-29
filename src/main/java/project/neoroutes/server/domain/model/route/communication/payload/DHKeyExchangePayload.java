@@ -9,7 +9,6 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@Builder
 public class DHKeyExchangePayload extends AbstractMessagePayload implements Serializable {
     public SignedData<String> dhMessage;
     public DHKeyExchangePayload() {

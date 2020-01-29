@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@Builder
 public class SimpleTextDirectMessagePayload extends AbstractMessagePayload implements Serializable {
     private SignedData<TextMessage> textMessage;
     public SimpleTextDirectMessagePayload() {
