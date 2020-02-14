@@ -3,11 +3,10 @@ package project.neoroutes.server;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import project.neoroutes.key.CNGenerator;
-import project.neoroutes.key.KeyStoreGenerator;
-import project.neoroutes.key.NeoRoutesCNGenerator;
-import project.neoroutes.key.UUIDFileUserIdGenerator;
+import project.neoroutes.key.*;
 
+import java.io.File;
+import java.security.KeyPair;
 import java.security.KeyStore;
 
 @SpringBootApplication
@@ -27,11 +26,16 @@ public class ServerApplication {
 	}
 
 	private static void init(String[] args) throws Exception {
+		log.info("Generating key pair of `"+keyStoreAddress+"` does not exist");
+		KeyPair keyPair = null;
+		if(!new File(keyStoreAddress).exists()){
+			keyPair = new KeyGenerator().generate();
+		}
 		password = getPassword(args);
 		log.info("Generating / Reading user uuid");
-		uuid = new UUIDFileUserIdGenerator("user.uuid").generate();
+		uuid = new PubHashUserIdGenerator("user.uuid", keyPair != null ? keyPair.getPublic() : null).generate();
 		CNGenerator cnGenerator = new NeoRoutesCNGenerator(uuid);
-		KeyStoreGenerator keyStoreGenerator = new KeyStoreGenerator(cnGenerator, keyStoreAddress, password);
+		KeyStoreGenerator keyStoreGenerator = new KeyStoreGenerator(cnGenerator, keyStoreAddress, password, keyPair);
 		log.info("Generating / reading keystore");
 		keyStore = keyStoreGenerator.generate();
 	}
