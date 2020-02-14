@@ -2,7 +2,9 @@ package project.neoroutes.server.config;
 
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import project.neoroutes.helper.KeyStoreWrapper;
 import project.neoroutes.server.ServerApplication;
 
 import javax.net.ssl.SSLContext;
@@ -19,8 +21,9 @@ public class SSLConfig {
     private final KeyStore keyStore;
     private final String password = ServerApplication.password;
 
-    public SSLConfig(KeyStore keyStore) {
-        this.keyStore = keyStore;
+    @Autowired
+    public SSLConfig(KeyStoreWrapper keyStoreWrapper) {
+        this.keyStore = keyStoreWrapper.getKeyStore();
     }
 
 
