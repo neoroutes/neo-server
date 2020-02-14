@@ -14,7 +14,7 @@ public class ConnectionManagerStep implements Pipeline.Step<RegisterInput, Void>
 
     @Override
     public boolean process(RegisterInput registerInput, Void o) {
-        connectionManager.addConnection(registerInput.getRegisterDto().getRegisterInfo().getData().getUserId(), registerInput.getInteractableSession());
+        connectionManager.addConnection(registerInput.getRegisterDto(), registerInput.getInteractableSession());
         return true;
     }
 }
