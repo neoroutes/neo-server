@@ -1,7 +1,7 @@
-package project.neoroutes.server.domain.model.route.communication.payload;
+package project.neoroutes.server.domain.model.messaging.communication.payload;
 
 import lombok.*;
-import project.neoroutes.server.domain.model.route.SignedData;
+import project.neoroutes.server.domain.model.messaging.SignedData;
 
 import java.io.Serializable;
 

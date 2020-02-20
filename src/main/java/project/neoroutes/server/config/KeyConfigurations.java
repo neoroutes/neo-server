@@ -7,7 +7,7 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.annotation.Order;
 import project.neoroutes.helper.KeyStoreWrapper;
 import project.neoroutes.server.ServerApplication;
-import project.neoroutes.server.domain.model.route.UserInfo;
+import project.neoroutes.server.domain.model.messaging.UserInfo;
 
 import java.io.IOException;
 import java.security.KeyStore;

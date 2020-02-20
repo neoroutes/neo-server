@@ -1,7 +1,7 @@
 package project.neoroutes.server.handler.pipeline.route;
 
 import project.neoroutes.Pipeline;
-import project.neoroutes.server.domain.model.route.UserInfo;
+import project.neoroutes.server.domain.model.messaging.UserInfo;
 import project.neoroutes.server.repository.RouteCacheRepository;
 
 import java.util.List;

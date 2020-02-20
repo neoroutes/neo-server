@@ -1,9 +1,9 @@
-package project.neoroutes.server.domain.model.route.route;
+package project.neoroutes.server.domain.model.messaging.route;
 
 import lombok.*;
-import project.neoroutes.server.domain.model.route.SignedData;
-import project.neoroutes.server.domain.model.route.UserInfo;
-import project.neoroutes.server.domain.model.route.register.RegisterInfo;
+import project.neoroutes.server.domain.model.messaging.SignedData;
+import project.neoroutes.server.domain.model.messaging.UserInfo;
+import project.neoroutes.server.domain.model.messaging.register.RegisterInfo;
 
 import java.io.Serializable;
 import java.util.List;

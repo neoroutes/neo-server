@@ -1,10 +1,7 @@
 package project.neoroutes.server.handler.pipeline.route;
 
 import project.neoroutes.Pipeline;
-import project.neoroutes.server.domain.model.RouteRequest;
-import project.neoroutes.server.domain.model.route.UserInfo;
-
-import java.util.Date;
+import project.neoroutes.server.domain.model.messaging.UserInfo;
 
 public class RequestRouteExtendStep implements Pipeline.Step<RouteRequestInput, Void> {
     private final UserInfo userInfo;

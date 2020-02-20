@@ -1,10 +1,10 @@
-package project.neoroutes.server.domain.model.route.register;
+package project.neoroutes.server.domain.model.messaging.register;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import project.neoroutes.server.domain.model.route.SignedData;
+import project.neoroutes.server.domain.model.messaging.SignedData;
 
 import java.io.Serializable;
 

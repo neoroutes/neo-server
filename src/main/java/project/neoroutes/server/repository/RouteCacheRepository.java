@@ -1,6 +1,6 @@
 package project.neoroutes.server.repository;
 
-import project.neoroutes.server.domain.model.route.UserInfo;
+import project.neoroutes.server.domain.model.messaging.UserInfo;
 
 import java.util.Date;
 import java.util.List;

@@ -1,7 +1,7 @@
 package project.neoroutes.server.service.connection;
 
 import org.springframework.stereotype.Service;
-import project.neoroutes.server.domain.model.route.register.RegisterDto;
+import project.neoroutes.server.domain.model.messaging.register.RegisterDto;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
