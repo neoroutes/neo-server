@@ -1,14 +1,13 @@
 package project.neoroutes.server.repository;
 
-import project.neoroutes.server.domain.model.messaging.UserInfo;
+import project.neoroutes.server.domain.model.protocol.route.FoundDto;
 
 import java.util.Date;
-import java.util.List;
 
 
 //todo: implement
 public interface RouteCacheRepository {
-    void add(String userId, List<UserInfo> route);
-    List<UserInfo> getCachedRoute(String userId);
+    void add(String userId, FoundDto foundDto);
+    FoundDto getCachedRoute(String userId);
     void clean(Date date);
 }

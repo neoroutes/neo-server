@@ -1,7 +1,7 @@
-package project.neoroutes.server.domain.model.messaging.communication;
+package project.neoroutes.server.domain.model.protocol.communication;
 
 import lombok.*;
-import project.neoroutes.server.domain.model.messaging.UserInfo;
+import project.neoroutes.server.domain.model.protocol.UserInfo;
 
 @AllArgsConstructor
 @NoArgsConstructor

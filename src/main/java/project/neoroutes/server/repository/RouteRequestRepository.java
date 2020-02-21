@@ -1,12 +1,9 @@
 package project.neoroutes.server.repository;
 
-import project.neoroutes.server.domain.model.RouteRequest;
 
-import java.util.Date;
-
+//todo: implement
+//usage: Persists request id so it will be checked later when found dto is returned
 public interface RouteRequestRepository {
-    void addRequest(RouteRequest routeRequest);
-    boolean containsRequest(String requestId);
-    void deleteRequest(String requestId);
-    void flushOld(Date date);
+    void addRequest(String id);
+    boolean contains(String id);
 }

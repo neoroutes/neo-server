@@ -1,12 +1,12 @@
-package project.neoroutes.server.handler.pipeline.route;
+package project.neoroutes.server.handler.pipeline.route.request;
 
 import project.neoroutes.Pipeline;
-import project.neoroutes.server.domain.model.messaging.UserInfo;
+import project.neoroutes.server.domain.model.protocol.UserInfo;
 
-public class RequestRouteExtendStep implements Pipeline.Step<RouteRequestInput, Void> {
+public class RouteReqExtendStep implements Pipeline.Step<RouteRequestInput, Void> {
     private final UserInfo userInfo;
 
-    public RequestRouteExtendStep(UserInfo userInfo) {
+    public RouteReqExtendStep(UserInfo userInfo) {
         this.userInfo = userInfo;
     }
 

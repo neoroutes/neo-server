@@ -1,7 +1,7 @@
-package project.neoroutes.server.domain.model.messaging.communication.payload;
+package project.neoroutes.server.domain.model.protocol.communication.payload;
 
 import lombok.AllArgsConstructor;
-import project.neoroutes.server.domain.model.messaging.communication.Payload;
+import project.neoroutes.server.domain.model.protocol.communication.Payload;
 
 @AllArgsConstructor
 public abstract class AbstractMessagePayload implements Payload {

@@ -1,8 +1,10 @@
 package project.neoroutes.server.service.connection;
 
 import org.springframework.stereotype.Service;
-import project.neoroutes.server.domain.model.messaging.register.RegisterDto;
+import project.neoroutes.server.domain.model.protocol.register.RegisterDto;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -15,6 +17,10 @@ public class ConnectionManager implements InteractableSession.Listener {
         interactableSession.addListener(this);
         userConnectionMap.put(registerDto.getRegisterInfo().getData().getUserId(), interactableSession);
         userRegisterInfoMap.put(registerDto.getRegisterInfo().getData().getUserId(), registerDto);
+    }
+
+    public List<InteractableSession> getAllConnections(){
+        return new ArrayList<>(userConnectionMap.values());
     }
 
     public InteractableSession getConnection(String userId){

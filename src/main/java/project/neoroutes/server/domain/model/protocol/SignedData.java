@@ -1,4 +1,4 @@
-package project.neoroutes.server.domain.model.messaging;
+package project.neoroutes.server.domain.model.protocol;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

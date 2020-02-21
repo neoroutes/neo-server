@@ -7,8 +7,8 @@ import project.neoroutes.helper.KeyStoreWrapper;
 import project.neoroutes.helper.Serializer;
 import project.neoroutes.helper.SignatureVerifier;
 import project.neoroutes.helper.TimeUtil;
-import project.neoroutes.server.domain.model.messaging.SignedData;
-import project.neoroutes.server.domain.model.messaging.register.RegisterInfo;
+import project.neoroutes.server.domain.model.protocol.SignedData;
+import project.neoroutes.server.domain.model.protocol.register.RegisterInfo;
 
 import java.io.IOException;
 import java.security.InvalidKeyException;
